@@ -19,10 +19,10 @@ app.use(cors(corsOptions))
 
 app.use(cors({
         //origin: config.origin,
+    credentials: false
 }));
 
 app.use(function(req, res, next) {
-    res.header('Access-Control-Allow-Headers', 'Origin, Content-Type');
     //res.header('Access-Control-Allow-Methods','GET,PUT,POST,DELETE');
     if (req.method === "OPTIONS") {
         res.header('Access-Control-Allow-Methods','GET,PUT,POST,DELETE');
