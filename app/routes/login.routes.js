@@ -1,4 +1,3 @@
-const express = require('express')
 const cors = require('cors');
 const corsOptions = {
     origin: 'https://sarif-financial-1.herokuapp.com',
@@ -11,8 +10,8 @@ module.exports = function(app) {
     var login = require('../controllers/login.controller.js');
 
     //app.route('/api/loginVerify').get(login.getData).post(login.sendData);
-    app.options('/api/loginVerify', cors());
+    app.options('*', cors(corsOptions));
 
-    app.post('/api/loginVerify',cors(), login.sendData);
+    app.post('/api/loginVerify',cors(corsOptions), login.sendData);
 
 }
