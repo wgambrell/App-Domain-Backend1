@@ -9,12 +9,6 @@ app.use(bodyParser.json())
 var MemoryStore =session.MemoryStore;
 var request = require('request');
 
-const cors = require('cors')
-const corsOptions = {
-    origin: 'https://sarif-financial-1.herokuapp.com',
-    optionsSuccessStatus: 200,
-    'Access-Control-Allow-Methods': 'GET,PUT,POST,DELETE'
-}
 
 
 const db = require('./app/config/db.config.js');
