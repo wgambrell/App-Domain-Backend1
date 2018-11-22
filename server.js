@@ -24,13 +24,11 @@ app.use(cors({
 }));
 
 app.use(function(req, res, next) {
-    res.header('Access-Control-Allow-Origin', '*');
-    res.header('Access-Control-Allow-Headers', 'Origin, Content-Type');
+    res.setHeader('Access-Control-Allow-Origin', 'https://sarif-financial-1.herokuapp.com');
+    res.setHeader('Access-Control-Allow-Headers', 'X-Requested, content-type');
+    res.setHeader('Access-Control-Allow-Methods','GET,PUT,POST,DELETE');
+    res.setHeader('Access-Control-Allow-Credentials', true);
     //res.header('Access-Control-Allow-Methods','GET,PUT,POST,DELETE');
-    if (req.method === "OPTIONS") {
-        res.header('Access-Control-Allow-Methods','GET,PUT,POST,DELETE');
-        return res.status(200).json({});
-    }
     next();
 })
 
