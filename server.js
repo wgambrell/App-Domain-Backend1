@@ -8,6 +8,18 @@ var bodyParser = require('body-parser');
 app.use(bodyParser.json())
 var MemoryStore =session.MemoryStore;
 
+
+app.use(function(req, res, next) {
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+    //res.header('Access-Control-Allow-Methods','GET,PUT,POST,DELETE');
+    if (req.method === "OPTIONS") {
+        res.header('Access-Control-Allow-Methods','GET,PUT,POST,DELETE');
+        return res.status(200).json({});
+    }
+    next();
+})
+
 const cors = require('cors')
 const corsOptions = {
     origin: 'https://sarif-financial-1.herokuapp.com',
@@ -22,16 +34,6 @@ app.use(cors({
     credentials: true
 }));
 
-app.use(function(req, res, next) {
-    res.header('Access-Control-Allow-Origin', '*');
-    res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
-    //res.header('Access-Control-Allow-Methods','GET,PUT,POST,DELETE');
-    if (req.method === "OPTIONS") {
-        res.header('Access-Control-Allow-Methods','GET,PUT,POST,DELETE');
-        return res.status(200).json({});
-    }
-    next();
-})
 
 const db = require('./app/config/db.config.js');
 
