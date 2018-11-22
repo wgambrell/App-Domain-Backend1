@@ -1,7 +1,6 @@
 const db = require('../config/db.config.js');
 const sequelize = require('sequelize');
 const Users = db.users;
-var url = 'https://server-sarif-financial1.herokuapp.com/api/loginVerify'
 
 /*exports.getData = (req, res) => {
 
@@ -21,7 +20,6 @@ exports.sendData = (req, res) => {
                 userPassword: "Temp",
                 userRole: "Temp"
             }
-            req.pipe()
 
             res.json(user);
 
