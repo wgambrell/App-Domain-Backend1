@@ -19,16 +19,17 @@ app.use(cors(corsOptions))
 
 app.use(cors({
         //origin: config.origin,
-    origin: true,
     credentials: true
 }));
 
 app.use(function(req, res, next) {
-    res.setHeader('Access-Control-Allow-Origin', 'https://sarif-financial-1.herokuapp.com');
-    res.setHeader('Access-Control-Allow-Headers', 'X-Requested, content-type');
-    res.setHeader('Access-Control-Allow-Methods','GET,PUT,POST,DELETE');
-    res.setHeader('Access-Control-Allow-Credentials', true);
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
     //res.header('Access-Control-Allow-Methods','GET,PUT,POST,DELETE');
+    if (req.method === "OPTIONS") {
+        res.header('Access-Control-Allow-Methods','GET,PUT,POST,DELETE');
+        return res.status(200).json({});
+    }
     next();
 })
 
