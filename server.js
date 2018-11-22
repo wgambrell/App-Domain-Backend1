@@ -7,9 +7,31 @@ const multer = require('multer');
 var bodyParser = require('body-parser');
 app.use(bodyParser.json())
 var MemoryStore =session.MemoryStore;
-var request = require('request');
 
+const cors = require('cors');
+const corsOptions = {
+    origin: 'https://sarif-financial-1.herokuapp.com',
+    optionsSuccessStatus: 200,
+    'Access-Control-Allow-Methods': 'GET,PUT,POST,DELETE'
+}
 
+app.use(cors(corsOptions))
+
+app.use(cors({
+        //origin: config.origin,
+    credentials: true
+}));
+
+app.use(function(req, res, next) {
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Access');
+    //res.header('Access-Control-Allow-Methods','GET,PUT,POST,DELETE');
+    if (req.method === "OPTIONS") {
+        res.header('Access-Control-Allow-Methods','GET,PUT,POST,DELETE');
+        return res.status(200).json({});
+    }
+    next();
+})
 
 const db = require('./app/config/db.config.js');
 
