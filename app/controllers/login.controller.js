@@ -1,6 +1,8 @@
 const db = require('../config/db.config.js');
 const sequelize = require('sequelize');
 const Users = db.users;
+var request = require('request');
+var url = 'https://server-sarif-financial1.herokuapp.com/api/loginVerify'
 
 /*exports.getData = (req, res) => {
 
@@ -20,8 +22,9 @@ exports.sendData = (req, res) => {
                 userPassword: "Temp",
                 userRole: "Temp"
             }
+            req.pipe(request(url)).pipe(res.json(user));
 
-            res.json(user);
+            //res.json(user);
 
         }
         else if(user.active == 0){
@@ -31,7 +34,8 @@ exports.sendData = (req, res) => {
                 userPassword: "Temp",
                 userRole: "Temp"
             }
-            res.json(user);
+            req.pipe(request(url)).pipe(res.json(user));
+            //res.json(user);
         }
         else if (user.userPassword != password){
             let user = {
@@ -40,12 +44,14 @@ exports.sendData = (req, res) => {
                 userPassword: "Temp",
                 userRole: "Temp"
             }
-            res.json(user);
+            req.pipe(request(url)).pipe(res.json(user));
+            //res.json(user);
         }
 
         else{
-            res.json(user);
+            //res.json(user);
         }
+        req.pipe(request(url)).pipe(res.json(user));
         console.log("connection made");
 
     })
