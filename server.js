@@ -19,6 +19,7 @@ app.use(cors(corsOptions))
 
 app.use(cors({
         //origin: config.origin,
+        credentials: true
 }));
 
 app.use(function(req, res, next) {
