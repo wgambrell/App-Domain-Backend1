@@ -55,7 +55,9 @@ require('./app/routes/users.routes.js')(app);
 require('./app/routes/log.routes.js')(app);
 
 // Create a Server
-var server = app.listen(8080, function () {
+var port = process.env.PORT || 8080;
+
+var server = app.listen(port, function () {
 
     let host = server.address().address
     let port = server.address().port
