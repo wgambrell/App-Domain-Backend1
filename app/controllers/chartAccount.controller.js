@@ -60,7 +60,30 @@ exports.findAllSort = (req, res) => {
     let columnSearch = req.body.columnSearch;
     let criteria = req.body.criteria;
     //if search is set to all and there is criteria input
-    if(columnSearch === 'all' && criteria!== '') {
+
+
+
+    if(columnSearch === 'all' && criteria!== '' && !isNaN(criteria)) {
+        console.log(criteria);
+        //if a search is entered
+        ChartAccount.findAll({
+            where: {
+                [Op.or]: [{accountName: {[Op.like]: '%'+ criteria + '%'}},
+                    {accountType: {[Op.like]: '%'+ criteria + '%'}},
+                    {accountSubType: {[Op.like]: '%'+ criteria + '%'}},
+                    {comment : {[Op.like]: '%'+ criteria + '%'}},
+                    {accountNumber : {[Op.eq]: criteria}},
+                    {currentBalance : {[Op.eq]: criteria}},
+                    {originalBalance : {[Op.eq]: criteria}},
+                ]
+            },
+            order: [[column, direction]]
+        }).then(accounts => {
+            // Send all customers to Client
+            res.json(accounts);
+        });
+    }
+    else if(columnSearch === 'all' && criteria!== '' && isNaN(criteria)) {
         //if a search is entered
         ChartAccount.findAll({
             where: {

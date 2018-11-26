@@ -10,12 +10,10 @@ module.exports = (sequelize, Sequelize) => {
             type: Sequelize.DATE,
             allowNull: true,
         },
-        /*
         Type: {
             type: Sequelize.STRING,
             allowNull: true,
         },
-       */
         Description: {
             type: Sequelize.STRING,
             allowNull: true,
@@ -30,6 +28,10 @@ module.exports = (sequelize, Sequelize) => {
         },
         FileID: {
             type: Sequelize.INTEGER,
+            allowNull: true,
+        },
+        FileName: {
+            type: Sequelize.STRING,
             allowNull: true,
         },
         acceptance: {

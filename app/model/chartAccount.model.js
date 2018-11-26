@@ -19,7 +19,7 @@ module.exports = (sequelize, Sequelize) => {
             allowNull: true
         },
         accountNumber: {
-            type: Sequelize.INTEGER,
+            type: Sequelize.DECIMAL,
             allowNull: false
         },
         normalSide: {

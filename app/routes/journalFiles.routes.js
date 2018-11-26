@@ -8,19 +8,18 @@ var fs = require('fs');
 
 const multer = require("multer");
 
-/*
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
-        cb(null, './upload')
+        cb(null, './uploads')
     },
     filename: function (req, file, cb) {
         cb(null, file.originalname)
     }
 })
-*/
 
 const upload = multer({
-   dest: 'uploads/'
+   //dest: 'uploads/'
+    storage: storage
 })
 
 
@@ -33,7 +32,7 @@ module.exports = function(app) {
             console.log("no file received");
         }
         else{
-            var fileData = fs.readFileSync('../server/uploads/' + req.file.filename);
+            var fileData = fs.readFileSync('./uploads/' + req.file.filename);
             console.log(req.file.filename);
             uploadFiles.create({
                 FileData: fileData,
@@ -48,7 +47,7 @@ module.exports = function(app) {
     app.post('/api/retreiveJournalFiles', (req, res) =>{
         let ID = req.body.jID;
         uploadFiles.findOne({where:{FileId: ID }}).then(file => {
-            res.json(file);
+            res.send(file.FileData);
         })
 
     });

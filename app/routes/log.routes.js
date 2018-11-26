@@ -8,6 +8,8 @@ module.exports = function(app) {
     // Retrieve all users
     app.get('/api/log', log.findAll);
 
+    app.post('/api/logSort', log.findAllSort);
+
     // Retrieve a single user by Id
     app.get('/api/log/:log', log.findById);
 
