@@ -63,7 +63,8 @@ exports.findAllSort = (req, res) => {
                     [Op.and]: [{acceptance: approvalType }],
 
                 },
-                order: [[column, direction]],
+                order: [[column, direction],
+                    [JournalAccounts, 'NormalSide', 'DESC']],
                 include:[
                     {
                         model: JournalAccounts,
@@ -87,7 +88,8 @@ exports.findAllSort = (req, res) => {
 
                     ],
                 },
-                order: [[column, direction]],
+                order: [[column, direction],
+                    [JournalAccounts, 'NormalSide', 'DESC']],
                 include:[
                     {
                         model: JournalAccounts,
@@ -112,7 +114,9 @@ exports.findAllSort = (req, res) => {
                     acceptance:  approvalType
 
                 },
-                order: [[column, direction]],
+                order: [[column, direction],
+                    [JournalAccounts, 'NormalSide', 'DESC']],
+
                 include:[
                     {
                         model: JournalAccounts,
