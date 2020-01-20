@@ -1,9 +1,9 @@
 const env = {
-    database: 'deq53b9h74qmhj',
-    username: 'omesfgsfpqjztd',
-    password: '9d8aa4edd3fd5a5ba084c58b71611413df3ec89a5fec0d03df93cdabd5c50e9f',
+    database: 'd77cun6o8d15fb',
+    username: 'usxmkxocdndfam',
+    password: '3c4f474c9b3adfc5797affd38c64471a20585dda527b5a7269157a6aa2ae904e',
 
-    host: 'ec2-54-197-249-140.compute-1.amazonaws.com',
+    host: 'ec2-23-23-216-40.compute-1.amazonaws.com',
     dialect: 'postgres',
     dialectOptions: {
         ssl: true

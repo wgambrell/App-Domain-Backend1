@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ec3ea87d-68f5-40e3-aaaf-6edd681a32bf" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/app/controllers/journal.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/journal.controller.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -197,6 +197,7 @@
     <session id="1380844114">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
+          <entry key="project.closed" value="1" />
           <entry key="project.open.time.0" value="1" />
           <entry key="project.opened" value="1" />
         </counts>
@@ -242,7 +243,7 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/controllers/journal.controller.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
+            <state relative-caret-position="-765">
               <caret line="63" lean-forward="true" selection-start-line="63" selection-end-line="63" />
             </state>
           </provider>
@@ -422,7 +423,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543208943014" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543290571252" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../F18-App-Domain/SARIF/server" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -485,12 +486,12 @@
       <workItem from="1543026921351" duration="6099000" />
       <workItem from="1543176345216" duration="17000" />
       <workItem from="1543187939043" duration="645000" />
-      <workItem from="1543202422749" duration="1465000" />
+      <workItem from="1543202422749" duration="2065000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="172590000" />
+    <option name="totallyTimeSpent" value="173190000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="182" y="123" width="1535" height="930" extended-state="0" />
@@ -735,7 +736,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/journal.controller.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
+        <state relative-caret-position="-765">
           <caret line="63" lean-forward="true" selection-start-line="63" selection-end-line="63" />
         </state>
       </provider>
